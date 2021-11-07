@@ -19,7 +19,7 @@ Then launch the container:
     # docker run -d --name postgres-osm openfirmware/postgres-osm
 
 Then test with `postgresql-client`:
-
+#<<This does not work with podman as --link is no longer valid!!>>
     # docker run -i -t --rm --link postgres-osm:pg --entrypoint /bin/bash postgres:9.3.5 -c 'psql -h $PG_PORT_5432_TCP_ADDR -p $PG_PORT_5432_TCP_PORT -U postgres postgres'
 
 This will use Docker's container links to connect to Postgresql without having Postgresql exposed to the host or network.
